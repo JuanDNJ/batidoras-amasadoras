@@ -1,0 +1,8 @@
+---
+import Main from "@layouts/Main.astro";
+const { title, description } = Astro.props;
+---
+
+<Main title={title} description={description}>
+  <slot />
+</Main>

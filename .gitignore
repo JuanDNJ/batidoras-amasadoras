@@ -1,0 +1,24 @@
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# Firebase
+.firebase/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+googlec6ba4cbac90c2923.html
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store

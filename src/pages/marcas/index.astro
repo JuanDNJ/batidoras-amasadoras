@@ -1,0 +1,121 @@
+---
+import { getCollection } from "astro:content";
+import HeaderLink from "@components/HeaderLink.astro";
+import MarcasLayout from "@layouts/MarcasLayout.astro";
+const marcas = await getCollection("batidora-de-pedestal");
+---
+
+<MarcasLayout
+  title="Marcas de batidoras amasadoras"
+  description="Descubre la excelencia culinaria con nuestras batidoras amasadoras de marcas líderes."
+>
+  <section class="grid gap-6">
+    <section class="flex flex-col gap-6">
+      <p class="text-xl px-4">
+        En un fascinante mundo de electrodomésticos, donde la innovación y la
+        calidad se entrelazan, surge un selecto grupo de marcas que redefine la
+        experiencia culinaria. En el corazón de este vibrante mercado de
+        batidoras, se encuentran nombres que destacan por su excelencia y
+        compromiso con la satisfacción del cliente.
+      </p>
+      <p class="text-xl px-4">
+        <strong>Bomann</strong>, con su legado de confianza y durabilidad, ha
+        sido un faro para aquellos que buscan la combinación perfecta entre
+        rendimiento y elegancia. Cada batidora Bomann es una obra maestra de
+        ingeniería, diseñada para superar las expectativas más exigentes.
+      </p>
+      <p class="text-xl px-4">
+        <strong>Cecotec</strong>, la fuerza impulsora detrás de la revolución
+        tecnológica en el mundo de la cocina, ha elevado el arte de mezclar y
+        batir a nuevas alturas. Sus batidoras no solo son potentes y eficientes,
+        sino también sinónimo de diseño moderno y funcionalidad avanzada.
+      </p>
+      <p class="text-xl px-4">
+        <strong>Family Care</strong>, como su nombre lo sugiere, se posiciona
+        como el pilar de la armonía en la cocina. Sus batidoras son compañeras
+        fiables en la preparación de alimentos, brindando la tranquilidad de
+        contar con un aliado confiable en la creación de deliciosas mezclas.
+      </p>
+      <p class="text-xl px-4">
+        <strong>Homlee</strong>, con su enfoque en la simplicidad elegante, ha
+        conquistado corazones con su línea de batidoras que fusionan la forma y
+        la función de manera impecable. Cada mezcladora Homlee es un testimonio
+        de la belleza en la simplicidad y la eficacia.
+      </p>
+      <p class="text-xl px-4">
+        <strong>Mesko</strong>, con su espíritu innovador, ha dado forma a
+        batidoras que van más allá de lo convencional. La marca se esfuerza por
+        sorprender a sus clientes con soluciones creativas y tecnología de
+        vanguardia, estableciendo un estándar para la creatividad en la cocina.
+      </p>
+      <p class="text-xl px-4">
+        <strong>Orbegozo</strong>, un nombre venerado en la industria, ha
+        conquistado los hogares con sus batidoras que fusionan la tradición y la
+        modernidad. Cada producto lleva consigo la herencia de la excelencia
+        artesanal, ofreciendo una experiencia culinaria que perdura en el
+        tiempo.
+      </p>
+      <p class="text-xl px-4">
+        <strong>Prixton</strong>, la encarnación de la elegancia contemporánea,
+        presenta batidoras que son igualmente estilizadas y potentes. Su
+        compromiso con la estética y la funcionalidad se refleja en cada
+        detalle, transformando la preparación de alimentos en una experiencia
+        estéticamente agradable.
+      </p>
+      <p class="text-xl px-4">
+        <strong>Ufesa</strong>, un nombre venerado por su consistencia y
+        rendimiento sobresaliente, ha sido durante mucho tiempo el socio
+        confiable en cocinas de todo el mundo. Las batidoras Ufesa son sinónimo
+        de durabilidad y eficiencia, brindando resultados excepcionales en cada
+        mezcla.
+      </p>
+      <p class="text-xl px-4">
+        <strong>Zeegma</strong>, la incorporación más reciente al escenario, ha
+        llegado con una frescura y vitalidad que redefine la percepción de las
+        batidoras. Su enfoque en la innovación y la accesibilidad ha conquistado
+        rápidamente la atención de los amantes de la cocina moderna.
+      </p>
+      <p class="text-xl px-4">
+        En este vibrante escenario de marcas, cada una con su propia historia y
+        personalidad, se destaca la pasión compartida por la excelencia. Estas
+        batidoras no son solo herramientas de cocina; son testimonios de la
+        creatividad, la innovación y el compromiso que dan vida a las cocinas de
+        todo el mundo. Con cada mezcla, estas marcas no solo satisfacen el
+        hambre, sino que también alimentan la imaginación y la pasión por la
+        cocina.
+      </p>
+    </section>
+    <section class="grid md:grid-cols-5 gap-4 items-center px-4">
+      <!-- {
+        marcas.map((marca) => (
+          <article
+            class={`${
+              marca.frontmatter.name === "zeegma" &&
+              "bg-stone-900 text-stone-200"
+            } flex flex-col gap-6 shadow-md p-4 rounded-md`}
+          >
+            <header class="h-full flex items-center justify-center">
+              <img
+                class={`${"w-full aspect-video object-contain "} `}
+                src={marca.frontmatter.logo}
+                alt={marca.frontmatter.name.toUpperCase()}
+              />
+            </header>
+
+            <footer class="flex justify-between">
+              <HeaderLink btn="button:detalles" href={marca.frontmatter.href}>
+                Detalles
+              </HeaderLink>
+              <HeaderLink
+                btn="button:products"
+                href={marca.frontmatter.hrefProducts}
+              >
+                Products
+              </HeaderLink>
+            </footer>
+          </article>
+        ))
+      } -->
+    </section>
+  </section>
+</MarcasLayout>

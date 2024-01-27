@@ -1,0 +1,23 @@
+---
+import LinkNoFollow from "@components/LinkNoFollow.astro";
+import Main from "@layouts/Main.astro";
+
+const { title, description } = Astro.props;
+---
+
+<Main title={title} description={description}>
+  <!-- SECTION TOP -->
+  <article class="w-full">
+    <slot name="title">
+      <h1 class="py-4 text-5xl">Marcas De Batidoras De Pedestal</h1>
+    </slot>
+    <slot name="description">
+      <span class="py-4 text-4xl">
+        Aquí encontrarás varias marcas de <LinkNoFollow baTrue>
+          batidoras de pedestal
+        </LinkNoFollow>.
+      </span>
+    </slot>
+    <slot />
+  </article>
+</Main>

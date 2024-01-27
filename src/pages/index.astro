@@ -1,0 +1,251 @@
+---
+import Main from "@layouts/Main.astro";
+import HeaderLink from "@components/HeaderLink.astro";
+import Banner from "@components/Banner.astro";
+import LinkNoFollow from "@components/LinkNoFollow.astro";
+import GalleryAwa from "@components/GalleryAwa.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts.ts";
+---
+
+<Main title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <!-- Banner, etc ... -->
+  <Banner class="w-full" center slot="before" />
+
+  <!-- Articles -->
+  <article class="flex flex-col gap-4">
+    <header class="flex-1 px-4">
+      <h2 class="text-3xl md:text-4xl pb-8">
+        <HeaderLink
+          title="Que es una batidora amasadoral?"
+          href="que-es-una-batidora-amasadora"
+        >
+          Que es una batidora amasadora ?
+        </HeaderLink>
+      </h2>
+      <span class="text-2xl py-4">
+        Una batidora amasadora es un electrodoméstico de cocina que se utiliza
+        para mezclar, batir y amasar ingredientes. Consta de un motor, un
+        pedestal, un tazón y una variedad de accesorios
+      </span>
+    </header>
+    <section class="flex flex-col gap-4">
+      <details class="p-4" open>
+        <summary class="text-2xl">
+          Que tener en cuenta a la hora de comprar una batidoras amasadora
+        </summary>
+
+        <p>
+          Aspectos que debes tomar en cuenta antes de comprar una
+          <LinkNoFollow baTrue>batidoras amasadora</LinkNoFollow> ✔️, el movimiento
+          planetario, la capacidad, los
+          <LinkNoFollow toUrl="https://amzn.to/48Yhm7b">
+            accesorios
+          </LinkNoFollow>
+          del tazón, las velocidades.
+        </p>
+        <HeaderLink
+          btn="button:leer"
+          href="/batidora-amasadora#tener-en-cuenta"
+        >
+          Leer más
+        </HeaderLink>
+      </details>
+      <details class="p-4" open>
+        <summary class="text-2xl">
+          Cuáles son las mejores <HeaderLink href="/marcas">marcas</HeaderLink> de
+          batidoras amasadora
+        </summary>
+
+        <ul class="p-4 grid md:grid-cols-6 gap-6">
+          <li>
+            <HeaderLink
+              class="text-2xl bg-stone-200 rounded-lg shadow-md hover:shadow-inner flex justify-center p-4"
+              title="Bomann"
+              href="/bomann"
+            >
+              Bomann
+            </HeaderLink>
+          </li>
+          <li>
+            <HeaderLink
+              class="text-2xl bg-stone-200 rounded-lg shadow-md hover:shadow-inner flex justify-center p-4"
+              title="Cecotec"
+              href={"/cecotec"}
+            >
+              Cecotec
+            </HeaderLink>
+          </li>
+          <li>
+            <HeaderLink
+              class="text-2xl bg-stone-200 rounded-lg shadow-md hover:shadow-inner flex justify-center p-4"
+              title="Cecotec"
+              href={"/ufesa"}
+            >
+              Ufesa
+            </HeaderLink>
+          </li>
+          <li>
+            <HeaderLink
+              class="text-2xl bg-stone-200 rounded-lg shadow-md hover:shadow-inner flex justify-center p-4"
+              title="Cecotec"
+              href={"/family-care"}
+            >
+              Family Care
+            </HeaderLink>
+          </li>
+          <li>
+            <HeaderLink
+              class="text-2xl bg-stone-200 rounded-lg shadow-md hover:shadow-inner flex justify-center p-4"
+              title="Cecotec"
+              href={"/homlee"}
+            >
+              Homlee
+            </HeaderLink>
+          </li>
+          <li>
+            <HeaderLink
+              class="text-2xl bg-stone-200 rounded-lg shadow-md hover:shadow-inner flex justify-center p-4"
+              title="Cecotec"
+              href={"/mesko"}
+            >
+              Mesko
+            </HeaderLink>
+          </li>
+          <li>
+            <HeaderLink
+              class="text-2xl bg-stone-200 rounded-lg shadow-md hover:shadow-inner flex justify-center p-4"
+              title="Cecotec"
+              href={"/orbegozo"}
+            >
+              Orbegozo
+            </HeaderLink>
+          </li>
+          <li>
+            <HeaderLink
+              class="text-2xl bg-stone-200 rounded-lg shadow-md hover:shadow-inner flex justify-center p-4"
+              title="Cecotec"
+              href={"/prixton"}
+            >
+              Prixton
+            </HeaderLink>
+          </li>
+          <li>
+            <HeaderLink
+              class="text-2xl bg-stone-200 rounded-lg shadow-md hover:shadow-inner flex justify-center p-4"
+              title="Cecotec"
+              href={"/zeegma"}
+            >
+              Zeegma
+            </HeaderLink>
+          </li>
+        </ul>
+        <HeaderLink btn="button:leer" href="/marcas">Leer más</HeaderLink>
+      </details>
+      <details class="p-4" open>
+        <summary class="text-2xl">
+          ¿Qué potencia de batidora amasadora casera se necesita?
+        </summary>
+
+        <p>
+          La potencia ideal para una
+          <LinkNoFollow baTrue>batidora amasadora</LinkNoFollow> puede variar según
+          las necesidades específicas de cada persona y el tipo de tareas que se
+          realizarán con la batidora. Sin embargo, generalmente, una potencia que
+          oscile entre 300 y 800 vatios puede ser adecuada para la mayoría de las
+          necesidades en la cocina doméstica.
+        </p>
+        <HeaderLink btn="button:leer" href="/batidora-de-pedestal#potencia">
+          Leer más
+        </HeaderLink>
+      </details>
+    </section>
+  </article>
+  <article class="">
+    <header class="flex flex-col py-4 px-4">
+      <h2 class="text-xl md:text-4xl">Imágenes de batidoras amasadora.</h2>
+      <span class="text-lg md:text-2xl py-4"
+        >¡Bienvenido a la mejor lista de
+        <LinkNoFollow baTrue>batidoras</LinkNoFollow> amasadora!</span
+      >
+      <span class="md:text-xl py-4"
+        >Haz clic en la imagen para verla en alta resolución:</span
+      >
+    </header>
+    <section class="flex">
+      <GalleryAwa />
+    </section>
+  </article>
+  <!-- <article class="flex flex-col gap-4">
+    <header class="flex flex-col px-4">
+      <h2 class="text-xl md:text-4xl py-4">
+        Clasificación de las batidoras amasadora
+      </h2>
+      <span class="text-lg md:text-2xl py-4"
+        >En esta lista te mostramos las
+        <LinkNoFollow baTrue>batidoras</LinkNoFollow> amasadora organizadas según
+        el precio.</span
+      >
+    </header>
+    <section class="flex flex-col gap-4">
+      <article class="flex flex-col gap-4">
+        <header class="px-4">
+          <strong class="text-sm md:text-2xl">Más Baratas</strong>
+        </header>
+        <section class="grid md:grid-cols-3 gap-4 px-4">
+          <HeaderLink _blank href="/images/webp/homlee.webp">
+            <img
+              class="w-full h-72 object-cover object-center rounded-none aspect-video"
+              src="/images/webp/homlee.webp"
+              alt="Imagen Batidora"
+            />
+          </HeaderLink>
+          <HeaderLink _blank href="/images/webp/power-twist.webp">
+            <img
+              class="w-full h-72 object-cover object-center rounded-none aspect-video"
+              src="/images/webp/power-twist.webp"
+              alt="Imagen Batidora"
+            />
+          </HeaderLink>
+          <HeaderLink _blank href="/images/webp/vospeed.webp">
+            <img
+              class="w-full h-72 object-cover object-center rounded-none aspect-video"
+              src="/images/webp/vospeed.webp"
+              alt="Imagen Batidora"
+            />
+          </HeaderLink>
+        </section>
+      </article>
+      <article class="flex flex-col gap-4">
+        <header class="px-4">
+          <strong class="text-sm md:text-2xl">Más Caras</strong>
+        </header>
+        <section class="grid md:grid-cols-3 gap-4 px-4">
+          <HeaderLink _blank href="/images/webp/bomann.webp">
+            <img
+              class="w-full h-72 object-cover object-center bg-yellow-500 rounded-none aspect-video"
+              src="/images/webp/bomann.webp"
+              alt="Imagen Batidora"
+            />
+          </HeaderLink>
+          <HeaderLink _blank href="/images/webp/create.webp">
+            <img
+              class="w-full h-72 object-cover object-center bg-yellow-500 rounded-none aspect-video"
+              src="/images/webp/create.webp"
+              alt="Imagen Batidora"
+            />
+          </HeaderLink>
+          <HeaderLink
+            _blank
+            href="/images/webp/family-care-amasadora-1000w.webp"
+          >
+            <img
+              class="w-full h-72 object-cover object-center bg-yellow-500 rounded-none aspect-video"
+              src="/images/webp/family-care-amasadora-1000w.webp"
+              alt="Imagen Batidora"
+            />
+          </HeaderLink>
+        </section>
+      </article>
+    </section>
+  </article> -->
+</Main>

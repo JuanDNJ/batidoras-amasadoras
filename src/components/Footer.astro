@@ -1,0 +1,27 @@
+---
+const today = new Date();
+import HeaderLink from "./HeaderLink.astro";
+---
+
+<footer class="w-full md:h-52 flex bg-stone-800 text-stone-200 gap-4 py-6">
+  <section
+    class="w-full m-auto md:max-w-7xl flex flex-col md:flex-row justify-around gap-6"
+  >
+    <address class="flex-1 text-sm px-4">
+      <HeaderLink href="/">
+        <h2 class="font-family-main-title text-xl md:text-4xl">
+          <span class="text-red-600">Batidoras Amasadoras</span>
+          <span class="text-stone-400 text-sm">{today.getFullYear()}</span>
+        </h2>
+      </HeaderLink>
+    </address>
+    <div class="flex-1 flex items-center px-4 gap-4">
+      <p>
+        Esta página participa en el Programa de Afiliados de Amazon EU y Amazon
+        Services LLC, un programa de publicidad para afiliados diseñado para
+        ofrecer a sitios web un modo de obtener comisiones por publicidad,
+        publicitando e incluyendo enlaces a Amazon.es y Amazon.com
+      </p>
+    </div>
+  </section>
+</footer>

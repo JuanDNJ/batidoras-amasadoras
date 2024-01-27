@@ -1,0 +1,35 @@
+---
+import BaseHead from "@layouts/BaseHead.astro";
+import Navigation from "@components/Navigation.astro";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <section class="sticky top-0 z-20">
+      <Header />
+      <Navigation />
+    </section>
+    <slot name="before" />
+    <main class="w-full md:max-w-7xl m-auto flex flex-col gap-4 py-16">
+      <slot />
+    </main>
+    <slot name="after" />
+    <Footer />
+    <style is:global>
+      @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap");
+      .font-family-main-title {
+        font-family: "Instrument Serif", serif;
+        font-weight: bolder;
+      }
+    </style>
+  </body>
+</html>

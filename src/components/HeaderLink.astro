@@ -1,0 +1,49 @@
+---
+const { href, class: className, menu, btn, _blank, ...props } = Astro.props;
+
+const { pathname } = Astro.url;
+
+const buttonLeer = {
+  active: false,
+  class:
+    "bg-yellow-500 px-4 py-2 rounded flex justify-center max-w-28 my-4 hover:bg-yellow-300  font-bold",
+};
+const buttonDetalles = {
+  active: false,
+  class:
+    "bg-stone-500 text-stone-200 px-4 py-2 rounded flex justify-center max-w-28 my-4 hover:bg-stone-800 text-w font-bold",
+};
+const buttonProducts = {
+  active: false,
+  class:
+    "bg-yellow-400  hover:text-stone-100 px-4 py-2 rounded flex justify-center max-w-28 my-4 hover:bg-yellow-600 text-w font-bold",
+};
+if (btn === "button:leer") {
+  buttonLeer.active = true;
+}
+if (btn === "button:detalles") {
+  buttonDetalles.active = true;
+}
+if (btn === "button:products") {
+  buttonProducts.active = true;
+}
+---
+
+<a
+  href={href}
+  target={(_blank && _blank) || ""}
+  class:list={[
+    className,
+    `${
+      (menu &&
+        "text-stone-950 md:text-stone-200 hover:text-blue-300 text-xl md:text-lg") ||
+      (buttonLeer.active && buttonLeer.class) ||
+      (buttonDetalles.active && buttonDetalles.class) ||
+      (buttonProducts.active && buttonProducts.class) ||
+      "text-yellow-800 hover:text-blue-500"
+    } `,
+  ]}
+  {...props}
+>
+  <slot />
+</a>

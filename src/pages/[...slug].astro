@@ -1,0 +1,91 @@
+---
+import Batidora from "@layouts/Batidora.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const batidoras = await getCollection("batidora-de-pedestal");
+
+  return batidoras.map((batidora) => {
+    return {
+      params: { slug: batidora.slug },
+      props: { batidora },
+    };
+  });
+}
+const { batidora } = Astro.props;
+
+const {
+  title,
+  description,
+  video,
+  photoProduct,
+  urlProduct,
+  additionalInformation,
+  details,
+  aboutProduct,
+} = batidora.data;
+---
+
+<Batidora
+  title={title && title}
+  description={description}
+  video={video}
+  photoProduct={photoProduct}
+  urlProduct={urlProduct}
+>
+  <p class="text-xl pb-8" slot="description">{description}</p>
+  <article class="px-4">
+    <h2 class="text-2xl">{aboutProduct && aboutProduct.title}</h2>
+    <ul class="px-2 py-4 flex flex-col gap-2">
+      {
+        aboutProduct &&
+          aboutProduct.list.map((batidora) => (
+            <li class="text-md px-2 border-l-2 border-green-500 pl-2">
+              {batidora}
+            </li>
+          ))
+      }
+    </ul>
+  </article>
+  <section class="w-full md:flex">
+    <article class="px-4 flex-1">
+      <h2 class="text-2xl">{details && details.title}</h2>
+
+      <table class="w-full">
+        {
+          details &&
+            details.list.map((detail) => (
+              <tr class="text-md px-2 pl-2 ">
+                <td class="bg-stone-300">
+                  <span>{detail.name}</span>
+                </td>
+                <td class="bg-stone-200">
+                  <span>{detail.text}</span>
+                </td>
+              </tr>
+            ))
+        }
+      </table>
+    </article>
+    <article class="px-4 flex-1">
+      <h2 class="text-2xl">
+        {additionalInformation && additionalInformation.title}
+      </h2>
+      <table class="w-full">
+        {
+          additionalInformation &&
+            additionalInformation.list.map((info) => (
+              <tr class="text-md px-2 pl-2 ">
+                <td class="bg-stone-300">
+                  <span>{info.name}</span>
+                </td>
+                <td class="bg-stone-200">
+                  <span>{info.text}</span>
+                </td>
+              </tr>
+            ))
+        }
+      </table>
+    </article>
+  </section>
+</Batidora>

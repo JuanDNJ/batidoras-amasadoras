@@ -1,0 +1,24 @@
+---
+const { product } = Astro.props;
+---
+
+<article
+  class="bg-stone-200 shadow-xl rounded-md hover:shadow-inner overflow-hidden"
+>
+  <a target="_blank" href={product.photoProduct} title={product.title}>
+    <img
+      src={product.photoProduct}
+      alt={product.title}
+      class="w-full h-40 aspect-video object-cover"
+    />
+  </a>
+  <div class="p-4">
+    <a
+      class="text-md hover:text-blue-500"
+      href={product.href}
+      title={product.title}
+    >
+      {product.title}
+    </a>
+  </div>
+</article>
