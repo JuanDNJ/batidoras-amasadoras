@@ -6,7 +6,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://batidoras-amasadoras.web.app",
+  site: "https://batidorasamasadoras.firebaseapp.com",
   integrations: [
     mdx({
       optimize: true,
