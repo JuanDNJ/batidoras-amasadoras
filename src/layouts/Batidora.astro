@@ -12,18 +12,24 @@ const { title, urlProduct, video, photoProduct, description } = Astro.props;
       {
         title && photoProduct && urlProduct && (
           <section class="flex flex-col gap-16">
-            <HeaderLink _blank href={photoProduct}>
-              <img
-                class="w-full h-72 md:h-[32rem] mf:w-full object-cover object-top aspect-video"
-                src={photoProduct}
-                alt={title}
-              />
-            </HeaderLink>
-            <h1 class="flex-1 text-xl px-4 md:text-3xl text-stone-800">
-              <span class="emoji-arrow-white text-[1.5rem]"> ▶️ </span>
-              {title}
-              <LinkNoFollow toUrl={urlProduct}>{"Ver en Amazon"}</LinkNoFollow>
-            </h1>
+            <header>
+              <HeaderLink _blank href={photoProduct}>
+                <img
+                  class="w-full h-72 md:h-[32rem] mf:w-full object-cover object-top aspect-video"
+                  src={photoProduct}
+                  alt={title}
+                />
+              </HeaderLink>
+            </header>
+            <section>
+              <h1 class="flex-1 text-xl px-4 md:text-3xl text-stone-800">
+                <span class="emoji-arrow-white text-[1.5rem]"> ▶️ </span>
+                {title}
+              </h1>
+            </section>
+            <footer class="w-full flex justify-end">
+              <LinkNoFollow styleBtn="build" toUrl={urlProduct} />
+            </footer>
           </section>
         )
       }

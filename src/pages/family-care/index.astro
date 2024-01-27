@@ -1,5 +1,5 @@
 ---
-const bomann = {
+const familyCare = {
   title: "Family Care Batidoras De Pedestal",
   name: "Family Care",
   description: "Disfruta con los tuyos, nosotros nos encargamos del resto.",
@@ -12,7 +12,7 @@ const bomann = {
 import Main from "@layouts/Main.astro";
 import { getCollection, getEntries } from "astro:content";
 import CardProduct from "@components/CardProduct.astro";
-export const products = await getCollection(
+export const listproducts = await getCollection(
   "batidora-de-pedestal",
   ({ data }) => {
     return data.marca === "family-care";
@@ -20,44 +20,21 @@ export const products = await getCollection(
 );
 ---
 
-<Main title={bomann.title} description={bomann.description}>
-  <h1 class="text-2xl">{bomann.title}</h1>
-  <section class="grid md:grid-cols-3 gap-8">
+<Main title={familyCare.title} description={familyCare.description}>
+  <h1 class="text-3xl">{familyCare.title}</h1>
+  <section class="flex flex-col gap-8">
     <article class="md:col-span-2 flex flex-col gap-4">
       <p class="text-xl">
-        C. Bomann GmbH, que forma parte del grupo Clatronic desde 1997, es una
-        empresa comercial líder en el mercado internacional con una amplia gama
-        de productos que van desde exprimidores automáticos hasta cocinas
-        eléctricas, lavavajillas, frigoríficos y congeladores, lavadoras y
-        secadoras. , a Z para exprimidores de cítricos.
+        Family Care es una marca española especializada en productos para el
+        hogar, formada por un equipo joven, dinámico y con experiencia, su
+        objetivo fundamental es ofrecer productos únicos, para lo cual, los
+        diseñan teniendo en cuenta las últimas tendencias
       </p>
-      <p class="text-xl">
-        Desde nuestro centro logístico con más de 100.000 m² de espacio de
-        almacenamiento, el grupo de empresas abastece a todos los principales
-        canales de distribución y socios comerciales nacionales e
-        internacionales.
-      </p>
-      <a
-        target="_blank"
-        href={bomann.photoUrl}
-        title={bomann.name.toUpperCase()}
-      >
-        <img src={bomann.photoUrl} alt={bomann.name.toUpperCase()} />
-      </a>
-      <iframe
-        class="aspect-video"
-        width="100%"
-        height="512"
-        src="https://www.youtube.com/embed/9a-mQUvoyUE?si=L0ZCTvzNRNCQZZmU"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
     </article>
     <section class="md:col-span-1 flex flex-col gap-6">
-      <h2 class="w-full pb-4">Productos de {bomann.name}</h2>
-      <div class="h-full grid md:grid-cols-2 gap-4 items-start justify-start">
-        {products.map((pro) => <CardProduct product={pro.data} />)}
+      <h2 class="text-2xl pb-4">Productos de {familyCare.name}</h2>
+      <div class="h-full grid md:grid-cols-4 gap-4 items-start justify-start">
+        {listproducts.map((pro) => <CardProduct product={pro.data} />)}
       </div>
     </section>
   </section>

@@ -1,24 +1,37 @@
 ---
 const { product } = Astro.props;
+import HeaderLink from "./HeaderLink.astro";
+import LinkNoFollow from "./LinkNoFollow.astro";
 ---
 
 <article
   class="bg-stone-200 shadow-xl rounded-md hover:shadow-inner overflow-hidden"
 >
-  <a target="_blank" href={product.photoProduct} title={product.title}>
-    <img
-      src={product.photoProduct}
-      alt={product.title}
-      class="w-full h-40 aspect-video object-cover"
-    />
-  </a>
-  <div class="p-4">
-    <a
-      class="text-md hover:text-blue-500"
+  <header>
+    <HeaderLink
+      target="_blank"
+      href={product.photoProduct}
+      title={product.title}
+    >
+      <img
+        src={product.photoProduct}
+        alt={product.title}
+        class="w-full h-40 aspect-video object-cover"
+      />
+    </HeaderLink>
+  </header>
+  <section class="p-4">
+    <h3>{product.title}</h3>
+  </section>
+  <footer class="flex items-center justify-between px-4">
+    <HeaderLink
+      btn="button:detalles"
+      class="text-md"
       href={product.href}
       title={product.title}
     >
-      {product.title}
-    </a>
-  </div>
+      Ver más
+    </HeaderLink>
+    <LinkNoFollow styleBtn="build" toUrl="https://amzn.to/424FnqZ" />
+  </footer>
 </article>

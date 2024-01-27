@@ -1,5 +1,5 @@
 ---
-const bomann = {
+const cecotec = {
   title: "Cecotec Batidoras De Pedestal",
   name: "Cecotec",
   description: "INNOVACIÓN PARA TU HOGAR",
@@ -12,7 +12,7 @@ const bomann = {
 import Main from "@layouts/Main.astro";
 import { getCollection, getEntries } from "astro:content";
 import CardProduct from "@components/CardProduct.astro";
-export const products = await getCollection(
+export const listProducts = await getCollection(
   "batidora-de-pedestal",
   ({ data }) => {
     return data.marca === "Cecotec";
@@ -20,44 +20,22 @@ export const products = await getCollection(
 );
 ---
 
-<Main title={bomann.title} description={bomann.description}>
-  <h1 class="text-2xl">{bomann.title}</h1>
-  <section class="grid md:grid-cols-3 gap-8">
+<Main title={cecotec.title} description={cecotec.description}>
+  <h1 class="text-3xl">{cecotec.title}</h1>
+  <section class="flex flex-col gap-8">
     <article class="md:col-span-2 flex flex-col gap-4">
       <p class="text-xl">
-        C. Bomann GmbH, que forma parte del grupo Clatronic desde 1997, es una
-        empresa comercial líder en el mercado internacional con una amplia gama
-        de productos que van desde exprimidores automáticos hasta cocinas
-        eléctricas, lavavajillas, frigoríficos y congeladores, lavadoras y
-        secadoras. , a Z para exprimidores de cítricos.
+        Se dedican a la fabricación y comercialización de aplicaciones para el
+        hogar enfocadas a mejorar la vida de las personas. Cuentan con una
+        amplia gama de productos: robots aspiradores, robots de cocina,
+        freidoras, menaje, descanso, fitness y ollas programables. Sus diseños
+        facilitan las tareas en el hogar para que disfrutes de tu tiempo.
       </p>
-      <p class="text-xl">
-        Desde nuestro centro logístico con más de 100.000 m² de espacio de
-        almacenamiento, el grupo de empresas abastece a todos los principales
-        canales de distribución y socios comerciales nacionales e
-        internacionales.
-      </p>
-      <a
-        target="_blank"
-        href={bomann.photoUrl}
-        title={bomann.name.toUpperCase()}
-      >
-        <img src={bomann.photoUrl} alt={bomann.name.toUpperCase()} />
-      </a>
-      <iframe
-        class="aspect-video"
-        width="100%"
-        height="512"
-        src="https://www.youtube.com/embed/9a-mQUvoyUE?si=L0ZCTvzNRNCQZZmU"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
     </article>
     <section class="md:col-span-1 flex flex-col gap-6">
-      <h2 class="w-full pb-4">Productos de {bomann.name}</h2>
-      <div class="h-full grid md:grid-cols-2 gap-4 items-start justify-start">
-        {products.map((pro) => <CardProduct product={pro.data} />)}
+      <h2 class="w-full pb-4 text-2xl">Productos de {cecotec.name}</h2>
+      <div class="h-full grid md:grid-cols-4 gap-4 items-start justify-start">
+        {listProducts.map((pro) => <CardProduct product={pro.data} />)}
       </div>
     </section>
   </section>
