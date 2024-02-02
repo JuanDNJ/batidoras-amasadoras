@@ -5,33 +5,37 @@ import LinkNoFollow from "./LinkNoFollow.astro";
 ---
 
 <article
-  class="bg-stone-200 shadow-xl rounded-md hover:shadow-inner overflow-hidden"
+  class="bg-stone-200 flex flex-col shadow-md shadow-stone-500 rounded-md"
 >
   <header>
     <HeaderLink
       target="_blank"
       href={product.photoProduct}
       title={product.title}
+      class="p-0"
     >
       <img
         src={product.photoProduct}
         alt={product.title}
-        class="w-full h-40 aspect-video object-cover"
+        class="max-h-52 w-full object-cover"
       />
     </HeaderLink>
   </header>
-  <section class="p-4">
-    <h3>{product.title}</h3>
+  <section class="p-2">
+    <h3 class="text-xl font-bold text-wrap">
+      {product.title}
+    </h3>
   </section>
-  <footer class="flex items-center justify-between px-4">
-    <HeaderLink
-      btn="button:detalles"
-      class="text-md"
+  <footer
+    class="h-full flex flex-col my-2 md:flex-row md:items-end justify-between px-4 gap-y-4"
+  >
+    <LinkNoFollow styleBtn="build" toUrl="https://amzn.to/424FnqZ" />
+    <a
+      class="py-2 px-4 text-xl md:text-[1.1rem] font-bold hover:underline"
       href={product.href}
       title={product.title}
     >
-      Ver más
-    </HeaderLink>
-    <LinkNoFollow styleBtn="build" toUrl="https://amzn.to/424FnqZ" />
+      Ver Detalles
+    </a>
   </footer>
 </article>

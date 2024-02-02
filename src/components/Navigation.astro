@@ -38,26 +38,27 @@ const marcasD = marcas.map((item) => {
       </svg>
     </section>
     <div
-      class="primary__menu hidden bg-stone-600 absolute top-[100%] p-4 right-0 w-[50vw] h-auto md:w-auto z-10 flex-col col-span-6 md:static md:flex md:flex-row md:justify-end md:col-span-5 md:pr-4 gap-4"
+      class="primary__menu hidden bg-stone-600 absolute top-[100%] right-0 w-[50vw] h-auto md:w-auto z-10 flex-col col-span-6 px-4 py-4 lg:py-0 md:static md:flex md:flex-row md:justify-end md:col-span-5 md:pr-4 gap-4"
     >
       <section class="group flex flex-col gap-4 relative">
-        <HeaderLink menu href="#">Marcas</HeaderLink>
+        <HeaderLink menu class="hover:underline" href="#">Marcas</HeaderLink>
         <article
-          class="hidden lg:min-w-40 group-hover:absolute group-hover:left-[-100%] group-hover:top-0 lg:group-hover:top-0 group-hover:flex group-hover:flex-col py-0 lg:py-16"
+          class="hidden lg:min-w-40 group-hover:absolute group-hover:right-[100%] lg:group-hover:right-0 group-hover:mx-4 group-hover:top-0 lg:group-hover:top-0 group-hover:flex group-hover:flex-col py-2 lg:py-16"
         >
           <ul
-            class="w-full h-full bg-stone-600 px-2 lg:py-4 rounded bg-in flex flex-col shadow shadow-black"
+            class="submenu min-w-44 h-full bg-stone-600 px-4 py-4 bg-in flex flex-col gap-3 lg:shadow lg:shadow-black"
           >
             {
               marcasD.map(
                 (marca) =>
                   marca && (
-                    <a
+                    <HeaderLink
+                      menu
+                      class="hover:underline text-xl"
                       href={`/${marca.slug}`}
-                      class="py-2 px-4 text-stone-200 m-0"
                     >
                       {marca.slug.replace("-", " ").toUpperCase()}
-                    </a>
+                    </HeaderLink>
                   )
               )
             }
@@ -65,7 +66,32 @@ const marcasD = marcas.map((item) => {
         </article>
       </section>
 
-      <HeaderLink menu href="/resenas">Reseñas</HeaderLink>
+      <HeaderLink menu href="/resenas" class="hover:underline">
+        Reseñas
+      </HeaderLink>
     </div>
   </section>
 </nav>
+<style>
+  .submenu::before {
+    content: ">";
+    font-size: 1.2rem;
+    padding-left: 3px;
+    position: absolute;
+    top: 0px;
+    left: 100%;
+    width: auto;
+    height: 32px;
+    color: snow;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+  @media (min-width: 1024px) {
+    .submenu::before {
+      transform: rotate(-90deg);
+      top: 12px;
+      right: 0%;
+    }
+  }
+</style>

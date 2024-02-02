@@ -3,13 +3,13 @@ const today = new Date();
 import HeaderLink from "@components/HeaderLink.astro";
 ---
 
-<header class="flex items-center justify-center py-4 md:py-6 bg-stone-200">
-  <HeaderLink href="/">
-    <h1 class="font-family-main-title text-4xl md:text-7xl">
+<header class="flex items-center justify-center px-2 py-2 md:py-4 bg-stone-200">
+  <a href="/">
+    <h1 class="font-family-main-title text-4xl text-center md:text-7xl">
       <span class="text-red-600">Batidoras Amasadoras</span>
-      <span class="text-stone-800 text-sm md:text-xl"
+      <span class="hidden md:inline text-stone-800 text-xl"
         >{today.getFullYear()}</span
       >
     </h1>
-  </HeaderLink>
+  </a>
 </header>
