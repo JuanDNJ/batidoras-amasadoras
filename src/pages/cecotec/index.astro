@@ -22,7 +22,7 @@ export const listProducts = await getCollection(
 
 <Main title={cecotec.title} description={cecotec.description}>
   <h1 class="text-3xl">{cecotec.title}</h1>
-  <section class="flex flex-col gap-8">
+  <section class="flex flex-col gap-8 px-4">
     <article class="md:col-span-2 flex flex-col gap-4">
       <p class="text-xl">
         Se dedican a la fabricación y comercialización de aplicaciones para el
@@ -32,7 +32,7 @@ export const listProducts = await getCollection(
         facilitan las tareas en el hogar para que disfrutes de tu tiempo.
       </p>
     </article>
-    <section class="md:col-span-1 flex flex-col gap-6">
+    <section class="md:col-span-1 items-center flex flex-col gap-6">
       <h2 class="w-full pb-4 text-2xl">Productos de {cecotec.name}</h2>
       <div class="h-full grid md:grid-cols-4 gap-4 items-start justify-start">
         {listProducts.map((pro) => <CardProduct product={pro.data} />)}
