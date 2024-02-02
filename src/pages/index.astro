@@ -5,6 +5,13 @@ import Banner from "@components/Banner.astro";
 import LinkNoFollow from "@components/LinkNoFollow.astro";
 import GalleryAwa from "@components/GalleryAwa.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts.ts";
+import { getCollection } from "astro:content";
+const marcas = await getCollection("batidora-de-pedestal");
+const marcasD = marcas.map((item) => {
+  if (!item.slug.includes("/")) {
+    return item;
+  }
+});
 ---
 
 <Main title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -47,14 +54,29 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts.ts";
           Leer más
         </HeaderLink>
       </details>
-      <details class="p-4" open>
-        <summary class="text-2xl">
-          Cuáles son las mejores <HeaderLink href="/marcas">marcas</HeaderLink> de
-          batidoras amasadora
-        </summary>
+      <article class="p-4">
+        <h2 class="text-2xl font-bold">
+          Aquí tienes algunas marcas de batidoras amasadoras
+        </h2>
 
         <ul class="p-4 grid md:grid-cols-6 gap-6">
-          <li>
+          {
+            marcasD.map(
+              (marca) =>
+                marca && (
+                  <li>
+                    <HeaderLink
+                      class="text-2xl bg-stone-200 rounded-lg shadow-md hover:shadow-inner flex justify-center p-4"
+                      title="Bomann"
+                      href={`/${marca.slug}`}
+                    >
+                      {marca.slug.replace("-", " ").toUpperCase()}
+                    </HeaderLink>
+                  </li>
+                )
+            )
+          }
+          <!-- <li>
             <HeaderLink
               class="text-2xl bg-stone-200 rounded-lg shadow-md hover:shadow-inner flex justify-center p-4"
               title="Bomann"
@@ -134,10 +156,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts.ts";
             >
               Zeegma
             </HeaderLink>
-          </li>
+          </li> -->
         </ul>
         <HeaderLink btn="button:leer" href="/marcas">Leer más</HeaderLink>
-      </details>
+      </article>
       <details class="p-4" open>
         <summary class="text-2xl">
           ¿Qué potencia de batidora amasadora casera se necesita?
