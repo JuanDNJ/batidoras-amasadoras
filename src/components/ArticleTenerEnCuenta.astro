@@ -1,0 +1,25 @@
+---
+const { title, description, url } = Astro.props;
+---
+
+<article class="group flex flex-col gap-4 hover:shadow-md px-4 py-8 relative">
+  <section class="group/btn">
+    {
+      url && (
+        <a
+          aria-label={url}
+          href={`/que-tener-en-cuenta/${url}`}
+          class="hidden group-hover:inline-flex group-hover:absolute group-hover:top-0 group-hover:right-2 border border-yellow-500 p-2 text-stone-500 font-bold rounded-md bg-blue-200"
+        >
+          Info
+        </a>
+      )
+    }
+
+    {title && <h2 class="text-2xl md:text-2xl font-bold mt-4">{title}</h2>}
+
+    <p class="text-xl md:text-md">
+      {description}
+    </p>
+  </section>
+</article>
