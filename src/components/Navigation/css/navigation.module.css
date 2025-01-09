@@ -1,0 +1,38 @@
+.nav {
+  @apply w-full max-h-96 flex text-stone-200 bg-stone-600 md:py-4 relative md:static z-10;
+}
+.container{
+  @apply w-full md:max-w-7xl m-auto grid grid-cols-6 items-center;
+}
+.menuBars {
+  @apply col-span-5 text-slate-200 flex items-start justify-end md:hidden pr-4;
+}
+.logo{
+  @apply flex pl-4;
+}
+
+.primaryMenu{
+  @apply bg-stone-600 absolute top-[100%] right-0 w-[50vw] h-auto md:w-auto z-10 flex-col col-span-6 px-4 py-4 lg:py-0 md:static md:flex md:flex-row md:justify-end md:col-span-5 md:pr-4 gap-4;
+}
+.flexGroup{
+  @apply relative;
+}
+.submenu{
+  @apply hidden;
+}
+.flexGroup:hover .submenu {
+  @apply flex md:absolute md:right-0;
+}
+/* .lll {
+  @apply hidden lg:min-w-40 group-hover:absolute group-hover:right-[100%] lg:group-hover:right-0 group-hover:mx-4 group-hover:top-0 lg:group-hover:top-0 group-hover:flex group-hover:flex-col py-2 lg:py-16;
+} */
+.brands {
+  @apply min-w-44 h-full bg-stone-600 px-4 py-4 flex flex-col gap-3 lg:shadow lg:shadow-black;
+}
+.linkBrand, .submenuLinkBrand{
+  @apply hover:underline;
+  font-size: clamp(1.2em, 2.5dvw, 1.3em)
+}
+.submenu__linkBrand{
+  font-size: clamp(1.1em, 2.5dvw, 1.2em)
+}
