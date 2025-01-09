@@ -1,5 +1,13 @@
 ---
 import Main from "@layouts/Main.astro";
+import { getCollection } from "astro:content";
+const marcas = await getCollection("batidora-de-pedestal");
+export const products = await getCollection(
+  "batidora-de-pedestal",
+  ({ data }) => {
+    return data.marca === "Mesko";
+  },
+);
 ---
 
 <Main
@@ -7,4 +15,15 @@ import Main from "@layouts/Main.astro";
   description="Descubre la excelencia culinaria con nuestras batidoras de pedestal de marcas líderes."
 >
   <h1>Mesko</h1>
+  {
+    products.map(
+      (brand) =>
+        brand && (
+          <div>
+            <h2 class="text-stone-500 text-xl">{brand.data.title}</h2>
+          </div>
+        ),
+    )
+  }
+  {JSON.stringify(products)}
 </Main>
