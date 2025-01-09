@@ -1,0 +1,75 @@
+---
+import HeaderLink from "../HeaderLink.astro";
+import stylesNav from "./css/navigation.module.css";
+import UlLinks from "./UlLinks.astro";
+import { getCollection } from "astro:content";
+const marcas = await getCollection("batidora-de-pedestal");
+const marcasD = marcas.map((item) => {
+  if (!item.slug.includes("/")) {
+    return item;
+  }
+});
+---
+
+<nav class={stylesNav.nav}>
+  <section class={stylesNav.container}>
+    <section class={stylesNav.logo}>
+      <img
+        src="/images/logos/webp/batidoras-pedestal.webp"
+        alt=""
+        width="32"
+        height="32"
+      />
+    </section>
+    <section class={stylesNav.menuBars}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="toggle__menubars w-12 h-12"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M3 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 5.25Zm0 4.5A.75.75 0 0 1 3.75 9h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 9.75Zm0 4.5a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Zm0 4.5a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </section>
+    <div class={`primaryMenu hidden ${stylesNav.primaryMenu}`}>
+      <section class={stylesNav.flexGroup}>
+        <HeaderLink menu class={stylesNav.linkBrand} href="#">Marcas</HeaderLink
+        >
+        <article class={stylesNav.submenu}>
+          <UlLinks>
+            {
+              marcasD.map(
+                (marca) =>
+                  marca && (
+                    <HeaderLink
+                      menu
+                      class={stylesNav.submenuLinkBrand}
+                      href={`/${marca.slug}`}
+                    >
+                      {marca.slug.replace("-", " ").toUpperCase()}
+                    </HeaderLink>
+                  ),
+              )
+            }
+          </UlLinks>
+        </article>
+      </section>
+
+      <HeaderLink menu href="/resenas" class={stylesNav.linkBrand}>
+        Reseñas
+      </HeaderLink>
+    </div>
+  </section>
+</nav>
+<script>
+  //  TOGGLE MENU
+  const toggleMenubars = document.querySelector(".toggle__menubars");
+  const primary__menu = document.querySelector(".primaryMenu") as HTMLElement;
+  toggleMenubars?.addEventListener("click", (event) => {
+    primary__menu.classList.toggle("hidden");
+    primary__menu.classList.add("flex");
+  });
+</script>
