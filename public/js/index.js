@@ -12,12 +12,5 @@
       iVideo?.classList.add("hidden");
     }
   });
-  //  TOGGLE MENU
-  const toggleMenubars = document.querySelector(".toggle__menubars");
 
-  const primary__menu = document.querySelector(".primary__menu");
-  toggleMenubars?.addEventListener("click", (event) => {
-    primary__menu?.classList.toggle("hidden");
-    primary__menu?.classList.add("flex");
-  });
 })();
