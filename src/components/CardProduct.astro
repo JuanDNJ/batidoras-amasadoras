@@ -29,7 +29,7 @@ import LinkNoFollow from "./LinkNoFollow.astro";
   <footer
     class="h-full flex flex-col my-2 md:flex-row md:items-end justify-between px-4 gap-y-4"
   >
-    <LinkNoFollow styleBtn="build" toUrl="https://amzn.to/424FnqZ" />
+    <LinkNoFollow styleBtn="build" toUrl={product.urlProduct} />
     <a
       class="py-2 px-4 text-xl md:text-[1.1rem] font-bold hover:underline"
       href={product.href}
