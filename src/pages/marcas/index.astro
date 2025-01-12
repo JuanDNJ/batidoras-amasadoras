@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import HeaderLink from "@components/HeaderLink.astro";
 import MarcasLayout from "@layouts/MarcasLayout.astro";
 import Tag from "@components/Tag/Tag.astro";
 import stylesMarcas from "./css/marcas.module.css";
@@ -12,8 +11,8 @@ const collection = await getCollection("marcas");
   description="Descubre la excelencia culinaria con nuestras batidoras amasadoras de marcas líderes."
 >
   <section class="grid gap-6 text-left">
-    <section class="flex flex-col">
-      <p class="text-xl p-4">
+    <section class="flex flex-col gap-2">
+      <p class="text-xl py-2">
         En un fascinante mundo de electrodomésticos, donde la innovación y la
         calidad se entrelazan, surge un selecto grupo de marcas que redefine la
         experiencia culinaria. En el corazón de este vibrante mercado de
@@ -22,12 +21,12 @@ const collection = await getCollection("marcas");
       </p>
       {
         collection.map((record) => (
-          <p class="text-xl p-4">
+          <p class="text-xl py-2">
             <strong>{record.data.marca}</strong>, {record.data.description}
           </p>
         ))
       }
-      <p class="text-xl p-4">
+      <p class="text-xl py-2">
         En este vibrante escenario de marcas, cada una con su propia historia y
         personalidad, se destaca la pasión compartida por la excelencia. Estas
         batidoras no son solo herramientas de cocina; son testimonios de la
@@ -38,7 +37,15 @@ const collection = await getCollection("marcas");
       </p>
     </section>
   </section>
-  <section class={stylesMarcas.grid}>
+  <section class="grid">
     {collection.map((record) => <Tag label={record.data.marca} />)}
   </section>
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+      gap: 1em;
+      padding: 1em;
+    }
+  </style>
 </MarcasLayout>

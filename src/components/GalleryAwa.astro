@@ -70,26 +70,30 @@ const listDefault = [
 const { listGalllery = listDefault } = Astro.props;
 ---
 
-<article class="grid md:grid-cols-3 gap-4 px-4">
+<article class="grid grid-cols md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
   {
     listGalllery.map((item: ItemGallery) => (
-      <article class="grid gap-2">
-        <header>
-          <HeaderLink href={item.img.src}>
-            <img
-              class="w-full h-72 object-cover object-center bg-yellow-500 rounded-xl aspect-video shadow-md hover:shadow-xl"
-              src={item.img.src}
-              alt={item.img.alt}
-            />
-          </HeaderLink>
-        </header>
-        <section class="flex flex-col items-center">
-          <h2 class="text-xl py-2">{item.title}</h2>
+      <article class="grid gap-2 md:w-full mx-auto shadow-md rounded-md overflow-clip">
+        <HeaderLink href={item.img.src}>
+          <img
+            class="object-cover w-full h-full lg:w-auto lg:min-h-52  md:aspect-square lg:aspect-video"
+            src={item.img.src}
+            alt={item.img.alt}
+          />
+        </HeaderLink>
+        <section class="flex flex-col items-center min-h-28 p-4">
+          <h2 class="text-xl md:text-sm">{item.title}</h2>
         </section>
-        <footer class="flex justify-end">
-          <LinkNoFollow styleBtn="build" toUrl={item.href} />
+        <footer class="flex justify-end p-4">
+          <LinkNoFollow styleBtn="view" toUrl={item.href} />
         </footer>
       </article>
     ))
   }
 </article>
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22em));
+  }
+</style>
