@@ -6,13 +6,13 @@ const { title, description } = Astro.props;
 
 <Main title={title} description={description}>
   <article class="flex flex-col px-4 border-b-2 border-spacing-5 pb-2 mb-8">
-    <header class="">
-      <h1 class="text-xl md:text-4xl py-4">
+    <header class="text-left">
+      <h1 class="text-4xl py-4 font-bold">
         {title}
       </h1>
       <span class="text-xl md:text-2xl">{description}</span>
     </header>
   </article>
   <Banner slot="before" center src="/images/webp/resena-2.webp" />
-  <slot> Default Layout Marcas</slot>
+  <slot>Default Layout Marcas</slot>
 </Main>
