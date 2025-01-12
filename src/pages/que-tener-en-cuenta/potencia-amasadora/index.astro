@@ -8,177 +8,154 @@ import Main from "@layouts/Main.astro";
           batidora según su potencia es crucial para asegurarte de que cumpla
           con tus necesidades y preferencias al momento de cocinar.`}
 >
-  <section>
-    <article class="grid md:grid-rows-3 gap-8">
-      <header class="row-auto flex flex-col items-center justify-center">
-        <h1 class="text-2xl md:text-3xl lg:text-4xl mb-8">
-          ¡Bienvenido! Claro, estaré encantado de ayudarte con eso. Elegir una
-          batidora según su potencia es crucial para asegurarte de que cumpla
-          con tus necesidades y preferencias al momento de cocinar.
-        </h1>
-      </header>
-      <section class="row-span-2 flex flex-col md:grid md:grid-cols-3 gap-4">
-        <article
-          class="md:shadow p-4 flex flex-col items-center justify-center"
-        >
-          <h2 class="w-full text-xl md:text-md lg:text-2xl mb-4 font-bold">
-            1. Define tus necesidades:
-          </h2>
-          <section>
-            <p class="text-xl md:text-md lg:text-lg p-2">
-              Antes de elegir una batidora, piensa en qué tipo de preparaciones
-              realizarás con más frecuencia. ¿Será principalmente para batir
-              huevos, mezclar masa para pasteles, hacer puré de sopas o triturar
-              hielo?
-            </p>
-          </section>
-        </article>
-        <article class="md:shadow p-4 flex flex-wrap relative">
-          <h2 class="w-full text-xl md:text-md lg:text-2xl mb-4 font-bold">
-            2. Entiende las categorías de potencia:
-          </h2>
-          <section class="grid grid-rows items-center justify-center gap-4">
-            <p class="text-xl md:text-md lg:text-lg">
-              Las batidoras suelen clasificarse en categorías de potencia en
-              vatios (W).
-            </p>
-            <div class="group cursor-pointer">
-              <button
-                aria-label={"Como elegir"}
-                class="bg-transparent hover:bg-stone-800 text-stone-800 hover:text-yellow-400 font-bold border-2 border-black px-2 py-[4px] rounded-md"
-                >Como elegir</button
-              >
-              <ul
-                class="hidden px-4 py-2 group-active:w-full group-active:h-full group-active:flex group-active:flex-col group-active:absolute group-active:left-0 group-active:top-0 group-active:bg-white z-20 list-decimal select-none"
-              >
-                <li class="flex flex-col">
-                  <strong>Menos de 300W:</strong>
-                  <span>
-                    Ideal para tareas básicas como batir huevos y mezclar
-                    líquidos.
-                  </span>
-                </li>
-                <li class="flex flex-col">
-                  <strong>300-600W:</strong>
-                  <span>
-                    Adecuado para preparaciones más pesadas como mezclar masas
-                    de pasteles y batir ingredientes más densos.
-                  </span>
-                </li>
-                <li class="flex flex-col">
-                  <strong> 600-1000W:</strong>
-                  <span>
-                    Óptimo para tareas más exigentes como triturar hielo, hacer
-                    puré de alimentos y mezclar masas más densas.
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </section>
-        </article>
-        <article
-          class="md:shadow p-4 flex flex-col items-center justify-center"
-        >
-          <h2 class="w-full text-xl md:text-md lg:text-2xl mb-4 font-bold">
-            3. Considera las funciones adicionales:
-          </h2>
-          <section>
-            <p class="text-xl md:text-md lg:text-lg">
-              Algunas batidoras tienen funciones adicionales como trituradoras
-              de hielo, procesadores de alimentos o accesorios para amasar.
-              Evalúa si estas características son importantes para tus
-              necesidades.
-            </p>
-          </section>
-        </article>
-        <article
-          class="md:shadow p-4 flex flex-col items-center justify-center"
-        >
-          <h2 class="w-full text-xl md:text-md lg:text-2xl mb-4 font-bold">
-            4. Tipo de batidora:
-          </h2>
-          <section>
-            <ul class="list-decimal">
+  <article class="grid px-4 gap-4">
+    <header class="col-span-1 flex flex-col">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl">
+        ¡Bienvenido! Claro, estaré encantado de ayudarte con eso. Elegir una
+        batidora según su potencia es crucial para asegurarte de que cumpla con
+        tus necesidades y preferencias al momento de cocinar.
+      </h1>
+    </header>
+    <section class="col-span-1 flex flex-col md:grid md:grid-cols-3 gap-4">
+      <article class="rounded-md shadow-md shadow-slate-300 p-4 flex flex-col">
+        <h2 class="text-2xl md:text-xl">1. Define tus necesidades:</h2>
+        <section>
+          <p class="text-xl md:text-sm p-2">
+            Antes de elegir una batidora, piensa en qué tipo de preparaciones
+            realizarás con más frecuencia. ¿Será principalmente para batir
+            huevos, mezclar masa para pasteles, hacer puré de sopas o triturar
+            hielo?
+          </p>
+        </section>
+      </article>
+      <article
+        class="rounded-md shadow-md shadow-slate-300 p-4 flex flex-wrap relative"
+      >
+        <h2 class="text-2xl md:text-xl">
+          2. Entiende las categorías de potencia:
+        </h2>
+        <section class="grid grid-rows justify-center gap-4">
+          <p class="text-xl md:text-sm p-2">
+            Las batidoras suelen clasificarse en categorías de potencia en
+            vatios (W).
+          </p>
+          <div class="group cursor-pointer">
+            <button
+              aria-label={"Como elegir"}
+              class="bg-transparent hover:bg-stone-800 text-stone-800 hover:text-yellow-400 font-bold border-2 border-black px-2 py-[4px] rounded-md"
+              >Como elegir</button
+            >
+            <ul
+              class="hidden px-4 py-2 group-active:w-full group-active:h-full group-active:flex group-active:flex-col group-active:absolute group-active:left-0 group-active:top-0 group-active:bg-white z-20 list-decimal select-none"
+            >
               <li class="flex flex-col">
-                <strong>Batidoras de mano:</strong>
+                <strong>Menos de 300W:</strong>
                 <span>
-                  Más ligeras y versátiles, ideales para tareas simples. La
-                  potencia varía según el modelo.
+                  Ideal para tareas básicas como batir huevos y mezclar
+                  líquidos.
                 </span>
               </li>
               <li class="flex flex-col">
-                <strong>Batidoras de vaso:</strong>
+                <strong>300-600W:</strong>
                 <span>
-                  Suelen tener mayor potencia y son ideales para tareas más
-                  pesadas como triturar hielo o hacer purés.
+                  Adecuado para preparaciones más pesadas como mezclar masas de
+                  pasteles y batir ingredientes más densos.
+                </span>
+              </li>
+              <li class="flex flex-col">
+                <strong> 600-1000W:</strong>
+                <span>
+                  Óptimo para tareas más exigentes como triturar hielo, hacer
+                  puré de alimentos y mezclar masas más densas.
                 </span>
               </li>
             </ul>
-          </section>
-        </article>
-        <article
-          class="md:shadow p-4 flex flex-col items-center justify-center"
+          </div>
+        </section>
+      </article>
+      <article
+        class="rounded-md shadow-md shadow-slate-300 p-4 flex flex-col justify-center"
+      >
+        <h2 class="text-2xl md:text-xl">
+          3. Considera las funciones adicionales:
+        </h2>
+        <section>
+          <p class="text-xl md:text-sm p-2">
+            Algunas batidoras tienen funciones adicionales como trituradoras de
+            hielo, procesadores de alimentos o accesorios para amasar. Evalúa si
+            estas características son importantes para tus necesidades.
+          </p>
+        </section>
+      </article>
+      <article
+        class="rounded-md shadow-md shadow-slate-300 p-4 flex flex-col justify-center"
+      >
+        <h2 class="text-2xl md:text-xl">4. Tipo de batidora:</h2>
+        <section>
+          <ul class="list-decimal">
+            <li class="flex flex-col">
+              <strong>Batidoras de mano:</strong>
+              <span>
+                Más ligeras y versátiles, ideales para tareas simples. La
+                potencia varía según el modelo.
+              </span>
+            </li>
+            <li class="flex flex-col">
+              <strong>Batidoras de vaso:</strong>
+              <span>
+                Suelen tener mayor potencia y son ideales para tareas más
+                pesadas como triturar hielo o hacer purés.
+              </span>
+            </li>
+          </ul>
+        </section>
+      </article>
+      <article class="rounded-md shadow-md shadow-slate-300 p-4 flex flex-col">
+        <h2 class="text-2xl md:text-xl">5. Opiniones y reseñas:</h2>
+        <section>
+          <p p class="text-xl md:text-sm p-2">
+            Investiga opiniones de usuarios sobre las batidoras que estás
+            considerando. Las experiencias de otros usuarios pueden darte una
+            idea más clara de la durabilidad y eficacia del producto.
+          </p>
+        </section>
+      </article>
+      <article class="rounded-md shadow-md shadow-slate-300 p-4 flex flex-col">
+        <h2 class="text-2xl md:text-xl">6. Marca y calidad:</h2>
+        <section>
+          <p class="text-xl md:text-sm p-2">
+            Opta por marcas reconocidas que tengan buena reputación en cuanto a
+            durabilidad y servicio al cliente. La calidad de construcción y los
+            materiales utilizados también son importantes.
+          </p>
+        </section>
+      </article>
+      <article class="rounded-md shadow-md shadow-slate-300 p-4 flex flex-col">
+        <h2 class="text-2xl md:text-xl">7. Garantía:</h2>
+        <section>
+          <p class="text-xl md:text-sm p-2">
+            Verifica la garantía ofrecida por el fabricante. Una garantía más
+            larga generalmente sugiere mayor confianza en la durabilidad del
+            producto.
+          </p>
+        </section>
+      </article>
+      <article class="rounded-md shadow-md shadow-slate-300 p-4 flex flex-col">
+        <h2 class="text-2xl md:text-xl">8. Presupuesto:</h2>
+        <section>
+          <p class="text-xl md:text-sm p-2">
+            Establece un presupuesto antes de comenzar tu búsqueda. Puede haber
+            opciones de calidad en una variedad de rangos de precios.
+          </p>
+        </section>
+      </article>
+      <footer class="col-span-3">
+        <span
+          >Con estos pasos, deberías poder elegir una batidora que se ajuste a
+          tus necesidades y presupuesto. ¡Espero que encuentres la batidora
+          perfecta para ti!</span
         >
-          <h2 class="w-full text-xl md:text-md lg:text-2xl mb-4 font-bold">
-            5. Opiniones y reseñas:
-          </h2>
-          <section>
-            <p class="text-xl md:text-md lg:text-lg">
-              Investiga opiniones de usuarios sobre las batidoras que estás
-              considerando. Las experiencias de otros usuarios pueden darte una
-              idea más clara de la durabilidad y eficacia del producto.
-            </p>
-          </section>
-        </article>
-        <article
-          class="md:shadow p-4 flex flex-col items-center justify-center"
-        >
-          <h2 class="w-full text-xl md:text-md lg:text-2xl mb-4 font-bold">
-            6. Marca y calidad:
-          </h2>
-          <section>
-            <p class="text-xl md:text-md lg:text-lg">
-              Opta por marcas reconocidas que tengan buena reputación en cuanto
-              a durabilidad y servicio al cliente. La calidad de construcción y
-              los materiales utilizados también son importantes.
-            </p>
-          </section>
-        </article>
-        <article
-          class="md:shadow p-4 flex flex-col items-center justify-center"
-        >
-          <h2 class="w-full text-xl md:text-md lg:text-2xl mb-4 font-bold">
-            7. Garantía:
-          </h2>
-          <section>
-            <p class="text-xl md:text-md lg:text-lg">
-              Verifica la garantía ofrecida por el fabricante. Una garantía más
-              larga generalmente sugiere mayor confianza en la durabilidad del
-              producto.
-            </p>
-          </section>
-        </article>
-        <article
-          class="md:shadow p-4 flex flex-col items-center justify-center"
-        >
-          <h2 class="w-full text-xl md:text-md lg:text-2xl mb-4 font-bold">
-            8. Presupuesto:
-          </h2>
-          <section>
-            <p class="text-xl md:text-md lg:text-lg">
-              Establece un presupuesto antes de comenzar tu búsqueda. Puede
-              haber opciones de calidad en una variedad de rangos de precios.
-            </p>
-          </section>
-        </article>
-        <footer class="col-span-3">
-          <span
-            >Con estos pasos, deberías poder elegir una batidora que se ajuste a
-            tus necesidades y presupuesto. ¡Espero que encuentres la batidora
-            perfecta para ti!</span
-          >
-        </footer>
-      </section>
-    </article>
-  </section>
+      </footer>
+    </section>
+  </article>
 </Main>
