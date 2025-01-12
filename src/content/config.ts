@@ -1,6 +1,7 @@
-import { batidorasDePestal } from '../schemas';
+import { batidorasDePestal, marcas } from '../schemas';
 
 export const collections = {
-    'batidora-de-pedestal': batidorasDePestal
+    'batidora-de-pedestal': batidorasDePestal,
+    'marcas': marcas
 };
 

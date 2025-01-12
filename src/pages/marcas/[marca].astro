@@ -1,0 +1,19 @@
+---
+import Tag from "@components/Tag/Tag.astro";
+import { getCollection } from "astro:content";
+
+export const getStaticPaths = async () => {
+  const marcas = (await getCollection("marcas")) as [any];
+
+  return marcas.map((props) => {
+    return {
+      params: { marca: props.data.marca },
+      props: { props },
+    };
+  });
+};
+const { marca } = Astro.params;
+const { props } = Astro.props;
+---
+
+<Tag label={marca} />
