@@ -16,13 +16,13 @@ export const products = await getCollection(
   "batidora-de-pedestal",
   ({ data }) => {
     return data.marca === "Bomann";
-  }
+  },
 );
 ---
 
 <Main title={bomann.title} description={bomann.description}>
-  <section class="px-4 text-center h-full">
-    <h1 class="text-4xl lg:text-7xl">{bomann.title}</h1>
+  <section class="px-4 h-full">
+    <h1 class="text-3xl">{bomann.title}</h1>
     <section class="flex flex-col gap-8 py-4">
       <article class="md:col-span-2 flex flex-col gap-4">
         <p class="text-xl">
@@ -33,7 +33,7 @@ export const products = await getCollection(
         </p>
       </article>
       <section class="md:col-span-1 flex flex-col gap-6">
-        <h2 class="w-full text-2xl lg:text-4xl font-bold pb-4">
+        <h2 class="text-2xl pb-4">
           Batidoras Amasadoras {bomann.name}
         </h2>
         <div class="grid md:grid-cols-4 gap-y-16 gap-x-8">

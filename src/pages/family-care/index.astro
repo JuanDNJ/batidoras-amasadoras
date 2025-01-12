@@ -16,12 +16,12 @@ export const listproducts = await getCollection(
   "batidora-de-pedestal",
   ({ data }) => {
     return data.marca === "family-care";
-  }
+  },
 );
 ---
 
 <Main title={familyCare.title} description={familyCare.description}>
-  <h1 class="text-3xl">{familyCare.title}</h1>
+  <h1 class="text-3xl px-4">{familyCare.title}</h1>
   <section class="flex flex-col gap-8 px-4">
     <article class="md:col-span-2 flex flex-col gap-4">
       <p class="text-xl">
