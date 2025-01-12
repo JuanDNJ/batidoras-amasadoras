@@ -3,7 +3,7 @@ title: "Cecotec Twist&Fusion 4500"
 description: "Sistema silencioso con menos de 75 dB. Mecanismo HardGear System de transmisión directa mediante engranajes de acero para aprovechar al máximo la potencia. Incluye un completo recetario. Fabricado en aluminio fundido para una mayor seguridad y estabilidad.Valoración media de los clientes 4,2 ⭐️⭐️⭐️⭐️⭐"
 href: /cecotec/twist-fusion-4500
 urlProduct: "https://amzn.to/3Hn3QOO"
-marca: "Cecotec"
+marca: "cecotec"
 video: "IW6Fojp8LhE?si=XEQaaedLROwMB8OH"
 photoProduct: "/images/webp/twist-fusion-4500.webp"
 aboutProduct: { title: "Otra Entrada", list: [

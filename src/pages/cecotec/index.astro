@@ -15,8 +15,8 @@ import CardProduct from "@components/CardProduct.astro";
 export const listProducts = await getCollection(
   "batidora-de-pedestal",
   ({ data }) => {
-    return data.marca === "Cecotec";
-  }
+    return data.marca === "cecotec";
+  },
 );
 ---
 

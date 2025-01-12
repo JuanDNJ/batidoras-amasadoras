@@ -2,21 +2,21 @@
 import CardProduct from "@components/CardProduct.astro";
 import Main from "@layouts/Main.astro";
 import { getCollection } from "astro:content";
-const marcas = await getCollection("batidora-de-pedestal");
-export const products = await getCollection(
+
+export const listproducts = await getCollection(
   "batidora-de-pedestal",
   ({ data }) => {
-    return data.marca === "Mesko";
+    return data.marca === "mesko";
   },
 );
 const mesko = {
-  title: "Mesko",
+  title: "Mesko Batidoras De Pedestal",
   name: "Mesko",
   description:
     "Potente batidora amasadora de 1200W con 6 velocidades, diseñada para ofrecer resultados óptimos al mezclar, amasar o batir. Incluye un bol de acero inoxidable de 3.5 litros con tapa antisalpicaduras, apto para lavavajillas. Su sistema planetario garantiza una mezcla uniforme, ideal para preparar masas de pan, pizza, pasteles y más. Viene equipada con múltiples accesorios: gancho para masas pesadas, gancho agitador, batidor, espátula y báscula de cocina. Con diseño robusto y seguro, cuenta con parada automática, ventosas antideslizantes y protección contra sobrecarga. Perfecta para cualquier amante de la repostería y cocina.",
   photoUrl: "",
   logo: "",
-  href: "/marcas/mesko",
+  href: "/mesko",
   hrefProducts: "mesko/amasadoras",
 };
 ---
@@ -38,7 +38,7 @@ const mesko = {
           Batidoras Amasadoras {mesko.name}
         </h2>
         <div class="grid md:grid-cols-4 gap-y-16 gap-x-8">
-          {products.map((brand) => <CardProduct product={brand.data} />)}
+          {listproducts.map((brand) => <CardProduct product={brand.data} />)}
         </div>
       </section>
     </section>
