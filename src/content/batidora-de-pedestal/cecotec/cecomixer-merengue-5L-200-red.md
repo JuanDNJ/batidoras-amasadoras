@@ -5,7 +5,7 @@ href: /cecotec/cecomixer-merengue-5l-200-red
 urlProduct: "https://amzn.to/3WeL6c4"
 marca: "cecotec"
 video: ""
-photoProduct: "/images/webp/cecotec-merenge-5l-200-red.webp"
+photoProduct: "/images/webp/cecomixer-merengue-5l-200-red.webp"
 aboutProduct: { title: "Acerca de este producto", list: [] }
 details: { title: "Detalles técnicos", list: [], }
 additionalInformation: { title: "Información adicional", list: [], }
