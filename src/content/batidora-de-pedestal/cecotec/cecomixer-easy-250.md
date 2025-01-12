@@ -1,9 +1,9 @@
 ---
 title: Cecotec Cecomixer Easy 250 W
-marca: "Cecotec"
-href: /cecotec/cecomixer-easy-250
 description: "Movimiento Orbital, Capacidad 3 L, Bol de Acero, 5 Funciones: Amasar, Batir, Mezclar, Montar, Emulsionar, 6 Velocidades, Azul"
+href: /cecotec/cecomixer-easy-250
 urlProduct: "https://amzn.to/3SqOoHV"
+marca: "cecotec"
 video: "Ww_YWl91lh4"
 photoProduct: "/images/webp/cecomixer-easy-250.webp"
 aboutProduct: { title: "Acerca de este producto", list: [
