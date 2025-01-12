@@ -8,14 +8,10 @@ const { title, urlProduct, video, photoProduct, description } = Astro.props;
 <Main title={title} description={description}>
   <!-- SECTION TOP -->
   <article class={`flex  flex-col gap-8 p-4`}>
-    <header class={`grid grid-rows  md:flex md:flex-row gap-4 justify-center `}>
+    <header class={`grid grid-rows  md:flex md:flex-row gap-4 justify-center`}>
       {
         title && photoProduct && urlProduct && (
-          <section
-            class={`flex items-center flex-1 flex-col gap-8  ${
-              video && "shadow shadow-stone-400"
-            } p-4`}
-          >
+          <section class={`flex items-center flex-1 flex-col gap-8 p-4`}>
             <header class={`${!video && "flex   justify-center "}`}>
               <HeaderLink _blank href={photoProduct}>
                 <img
@@ -34,7 +30,7 @@ const { title, urlProduct, video, photoProduct, description } = Astro.props;
               </h1>
             </section>
             <footer class="w-full flex justify-end pr-4">
-              <LinkNoFollow styleBtn="build" toUrl={urlProduct} />
+              <LinkNoFollow styleBtn="view" toUrl={urlProduct} />
             </footer>
           </section>
         )
