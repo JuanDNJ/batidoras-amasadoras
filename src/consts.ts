@@ -1,8 +1,8 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = `Batidoras Amasadoras 2024`;
-export const SITE_DESCRIPTION = '▶️ Todo sobre batidoras amasadoras, precios, mejores marcas, mejores batidoras 2024';
+export const SITE_TITLE = `Batidoras Amasadoras 2025`;
+export const SITE_DESCRIPTION = '▶️ Todo sobre batidoras amasadoras, precios, mejores marcas, mejores batidoras 2025';
 export const URLS_AMAZON = {
     AMAZON: "https://amzn.to/47LAqoi",
     MESKO: "https://amzn.to/47FepHU",
