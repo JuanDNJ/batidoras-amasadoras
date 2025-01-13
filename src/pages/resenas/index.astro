@@ -1,6 +1,10 @@
 ---
 import Banner from "@components/Banner.astro";
+import GalleryAwa from "@components/GalleryAwa.astro";
+import LinkNoFollow from "@components/LinkNoFollow.astro";
 import Main from "@layouts/Main.astro";
+const blenders = await Astro.glob("../../content/batidora-de-pedestal/**/*.md");
+const filterPosts = blenders.filter((post) => !post.frontmatter.slug);
 ---
 
 <Main
@@ -52,5 +56,22 @@ import Main from "@layouts/Main.astro";
       encuentres la batidora perfecta que eleve tus habilidades culinarias al
       siguiente nivel.
     </p>
+  </article>
+  <article class="text-left">
+    <header class="flex flex-col py-4 px-4">
+      <h2 class="text-2xl md:text-4xl font-bold">
+        Lista de Batidoras Amasadora.
+      </h2>
+      <span class="text-lg md:text-2xl py-4"
+        >¡Bienvenido a la mejor lista de
+        <LinkNoFollow baTrue>batidoras</LinkNoFollow> amasadora!</span
+      >
+      <span class="md:text-xl py-4"
+        >Haz clic en la imagen para verla en alta resolución:</span
+      >
+    </header>
+    <section class="flex">
+      <GalleryAwa items={filterPosts} />
+    </section>
   </article>
 </Main>
