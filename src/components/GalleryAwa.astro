@@ -1,99 +1,17 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
-import LinkNoFollow from "./LinkNoFollow.astro";
-interface ItemGallery {
-  title: string;
-  name: string;
-  href: string;
-  img: {
-    src: string;
-    alt: string;
-  };
-}
-const listDefault = [
-  {
-    title: "Bomann KM 315 Batidora amasadora 1200 W",
-    name: "km 315",
-    href: "https://amzn.to/3OiIB4C",
-    img: {
-      src: "/images/webp/bomann-km-315.webp",
-      alt: "bomann",
-    },
-  },
-  {
-    title:
-      "CREATE DOWNMIX RETRO Batidora Amasadora de rotación planetaria Blanco",
-    name: "create",
-    href: "https://amzn.to/49160Q2",
-    img: {
-      src: "/images/webp/create.webp",
-      alt: "create",
-    },
-  },
-  {
-    title: "Family Care Amasadora 1000W",
-    name: "family-care",
-    href: "https://amzn.to/493woc0",
-    img: {
-      src: "/images/webp/family-care-amasadora-1000w.webp",
-      alt: "family-care",
-    },
-  },
-  {
-    title: "Mesko MS 4217B Batidora Amasadora 1200W",
-    name: "mesko",
-    href: "https://amzn.to/48SkTEK",
-    img: {
-      src: "/images/webp/mesko.webp",
-      alt: "mesko",
-    },
-  },
-  {
-    title: "Ufesa Elite Noir Batidora Amasadora 1400W",
-    name: "ufesa",
-    href: "https://amzn.to/4bgnklS",
-    img: {
-      src: "/images/webp/ufesa.webp",
-      alt: "ufesa",
-    },
-  },
-  {
-    title: "Cecotec Batidora Amasadora Cecomixer Easy. 250 W",
-    name: "cecotec",
-    href: "https://amzn.to/3SqOoHV",
-    img: {
-      src: "/images/webp/cecotec.webp",
-      alt: "cecotec",
-    },
-  },
-];
-const { listGalllery = listDefault } = Astro.props;
+import Blender from "./Blender/Blender.astro";
+import Grid from "./Grid.astro";
+const { p, rems, items } = Astro.props;
 ---
 
-<article class="grid grid-cols md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
-  {
-    listGalllery.map((item: ItemGallery) => (
-      <article class="grid gap-2 md:w-full mx-auto shadow-md rounded-md overflow-clip">
-        <HeaderLink href={item.img.src}>
-          <img
-            class="object-cover w-full h-full lg:w-auto lg:min-h-52  md:aspect-square lg:aspect-video"
-            src={item.img.src}
-            alt={item.img.alt}
-          />
-        </HeaderLink>
-        <section class="flex flex-col items-center min-h-28 p-4">
-          <h2 class="text-xl md:text-sm">{item.title}</h2>
-        </section>
-        <footer class="flex justify-end p-4">
-          <LinkNoFollow styleBtn="view" toUrl={item.href} />
-        </footer>
-      </article>
-    ))
-  }
-</article>
-<style>
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(22em));
-  }
-</style>
+<section
+  style={{
+    display: "flex",
+    padding: p ? p : "1em",
+    width: "100%",
+  }}
+>
+  <Grid columns={rems ? rems : "14rem"}>
+    {items.map((item) => <Blender item={item.frontmatter || item.data} />)}
+  </Grid>
+</section>
