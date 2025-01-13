@@ -1,0 +1,47 @@
+---
+import HeaderLink from "@components/HeaderLink.astro";
+import LinkNoFollow from "@components/LinkNoFollow.astro";
+
+const { item } = Astro.props;
+---
+
+<article
+  class="w-full flex flex-col justify-between gap-2 md:max-w-72 mx-auto shadow-md rounded-md overflow-clip blender"
+>
+  <header class="flex items-center justify-center py-8 px-4">
+    <HeaderLink href={item.photoProduct}>
+      <img
+        class="w-72 min-h-52 max-h-72 aspect-auto scale"
+        src={item.photoProduct}
+        alt={item.photoProduct}
+      />
+    </HeaderLink>
+  </header>
+  <section class="flex flex-col items-center min-h-28 p-4">
+    <h2 class="text-xl md:text-sm">{item.title}</h2>
+  </section>
+  <footer class="flex items-center justify-between p-4">
+    <LinkNoFollow styleBtn="view" toUrl={item.urlProduct} />
+    <a
+      class="detalles text-xl md:text-sm py-[0.25rem] px-[0.5rem] font-bold"
+      href={item.href}>Detalles</a
+    >
+  </footer>
+</article>
+<style>
+  .scale {
+    transition: transform 300ms ease-in-out;
+  }
+  .blender:hover .scale {
+    transform: scale(1.1);
+  }
+
+  .detalles {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: snow;
+    background: #dc2626;
+    border-radius: 3px;
+  }
+</style>
