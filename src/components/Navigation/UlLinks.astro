@@ -1,7 +1,8 @@
----
-import stylesNav from "./css/navigation.module.css";
----
-
-<ul class={stylesNav.brands}>
+<ul class="brands">
   <slot />
 </ul>
+<style>
+  .brands {
+    @apply min-w-44 h-full bg-[#dc2626] px-4 py-4 flex flex-col gap-3 lg:shadow lg:shadow-black;
+  }
+</style>
