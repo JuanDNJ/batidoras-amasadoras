@@ -1,0 +1,21 @@
+---
+const { columns } = Astro.props;
+---
+
+<article
+  class="grid"
+  style={{
+    gridTemplateColumns: columns
+      ? `repeat(auto-fit, minmax(${columns}, 1fr))`
+      : "auto",
+  }}
+>
+  <slot />
+</article>
+<style>
+  .grid {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+  }
+</style>
