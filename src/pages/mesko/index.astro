@@ -1,5 +1,6 @@
 ---
 import CardProduct from "@components/CardProduct.astro";
+import GalleryAwa from "@components/GalleryAwa.astro";
 import Main from "@layouts/Main.astro";
 import { getCollection } from "astro:content";
 
@@ -37,9 +38,7 @@ const mesko = {
         <h2 class="text-2xl pb-4">
           Batidoras Amasadoras {mesko.name}
         </h2>
-        <div class="grid md:grid-cols-4 gap-y-16 gap-x-8">
-          {listproducts.map((brand) => <CardProduct product={brand.data} />)}
-        </div>
+        <GalleryAwa items={listproducts} />
       </section>
     </section>
   </section>

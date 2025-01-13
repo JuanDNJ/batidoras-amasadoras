@@ -8,6 +8,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts.ts";
 import { getCollection } from "astro:content";
 import Tag from "@components/Tag/Tag.astro";
 const marcas = await getCollection("batidora-de-pedestal");
+const blenders = await Astro.glob("../content/batidora-de-pedestal/**/*.md");
+const filterPosts = blenders.filter((post) => !post.frontmatter.slug);
 const marcasD = marcas.map((item) => {
   if (!item.slug.includes("/")) {
     return item;
@@ -118,7 +120,7 @@ const marcasD = marcas.map((item) => {
       >
     </header>
     <section class="flex">
-      <GalleryAwa />
+      <GalleryAwa items={filterPosts} />
     </section>
   </article>
 </Main>
