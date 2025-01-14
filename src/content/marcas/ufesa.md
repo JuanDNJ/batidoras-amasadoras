@@ -5,4 +5,5 @@ description: "Un nombre venerado por su consistencia y
         confiable en cocinas de todo el mundo. Las batidoras Ufesa son sinónimo
         de durabilidad y eficiencia, brindando resultados excepcionales en cada
         mezcla."
+url: "ufesa"
 ---

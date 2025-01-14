@@ -5,4 +5,5 @@ description: "Un nombre venerado en la industria, ha
         modernidad. Cada producto lleva consigo la herencia de la excelencia
         artesanal, ofreciendo una experiencia culinaria que perdura en el
         tiempo."
+url: "orbegozo"
 ---
