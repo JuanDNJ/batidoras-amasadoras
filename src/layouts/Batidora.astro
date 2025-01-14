@@ -2,6 +2,7 @@
 import Main from "@layouts/Main.astro";
 import LinkNoFollow from "@components/LinkNoFollow.astro";
 import HeaderLink from "@components/HeaderLink.astro";
+import Video from "@components/Video/Video.astro";
 const { title, urlProduct, video, photoProduct, description } = Astro.props;
 ---
 
@@ -35,19 +36,7 @@ const { title, urlProduct, video, photoProduct, description } = Astro.props;
           </section>
         )
       }
-      {
-        video && (
-          <section class="flex  flex-1 flex-col h-92 items-start justify-center md:px-10">
-            <div class="w-full h-[260px] p-0 i-video">
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${video}`}
-              />
-            </div>
-          </section>
-        )
-      }
+      {video && <Video video={video} />}
     </header>
   </article>
   <slot />

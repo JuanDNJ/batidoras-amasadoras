@@ -1,0 +1,72 @@
+---
+const scrollWidth = "0px";
+---
+
+<section id="modal" class="toggleOf" role="button" tabindex="0">
+  <button class="close_modal">X</button>
+  <slot>Aqui el codigo </slot>
+</section>
+<script>
+  const modal = document.querySelector("#modal") as HTMLButtonElement;
+  const content_modal = document.querySelector("#modal") as HTMLElement;
+  const toggleModal = document.querySelector(
+    ".toggle_modal",
+  ) as HTMLButtonElement;
+  const closeModal = document.querySelector(
+    ".close_modal",
+  ) as HTMLButtonElement;
+
+  toggleModal.addEventListener("click", (event) => {
+    modal.classList.toggle("toogle");
+  });
+  closeModal.addEventListener("click", (event) => {
+    modal.classList.toggle("toogle");
+  });
+
+  document.prepend(modal);
+</script>
+<style>
+  .toggleOf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-100vw, 0);
+    z-index: 25;
+    box-sizing: border-box;
+
+    transition: transform 400ms ease-in-out;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .close_modal {
+    background: #dc2626;
+    position: absolute;
+    top: 1em;
+    right: 2em;
+    padding: 0.25em 1em;
+    border-radius: 4px;
+  }
+  .toogle {
+    transform: translate(0, 0);
+
+    color: snow;
+    ::-webkit-scrollbar {
+      display: var(--scroll-bar);
+      width: var(--scroll-width);
+    }
+    ::-webkit-scrollbar-thumb {
+      display: var(--scroll-bar);
+      background: #dc2626;
+    }
+  }
+  .content_modal {
+    z-index: 50;
+    background-color: red;
+    padding: 2em;
+  }
+</style>

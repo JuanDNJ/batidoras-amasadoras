@@ -1,5 +1,4 @@
 ---
-import Tag from "@components/Tag/Tag.astro";
 import { getCollection } from "astro:content";
 
 export const getStaticPaths = async () => {
@@ -14,7 +13,13 @@ export const getStaticPaths = async () => {
 };
 
 const { marca } = Astro.params;
-const { props } = Astro.props;
+const {
+  props: { id, data, body },
+} = Astro.props;
 ---
 
-<Tag label={marca} />
+{body}
+
+<!-- {JSON.stringify() <props.body title="asdasd"></props.body>} -->
+<strong>{data.marca}</strong>
+<p>{data.description}</p>

@@ -4,6 +4,7 @@ import Navigation from "@components/Navigation/Navigation.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 
+const scrollWidth = "3px";
 const { title, description } = Astro.props;
 ---
 
@@ -24,8 +25,17 @@ const { title, description } = Astro.props;
     </main>
     <slot name="after" />
     <Footer />
-    <style is:global>
+    <style is:global define:vars={{ scrollWidth }}>
       @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap");
+      :root {
+        ::-webkit-scrollbar {
+          width: var(--scrollWidth);
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #dc2626;
+        }
+      }
+
       .font-family-main-title {
         font-family: "Instrument Serif", serif;
         font-weight: bolder;

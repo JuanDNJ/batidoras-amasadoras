@@ -1,0 +1,51 @@
+---
+const { to, title, className, style, noFollow } = Astro.props;
+---
+
+{
+  noFollow ? (
+    <a
+      class={className}
+      target="_blank"
+      href={to}
+      rel="nofollow"
+      title={title}
+      style={{ ...style }}
+    >
+      <slot />
+    </a>
+  ) : (
+    <a class={className} href={to} title={title} style={{ ...style }}>
+      <slot />
+    </a>
+  )
+}
+
+<style>
+  a {
+    text-decoration: none;
+    display: inline-flex;
+    font-size: clamp(1.1em. 2.5vw, 2em);
+    color: #333;
+  }
+  .nofollow {
+    background: #dc2626;
+  }
+  .amazon {
+    background: yellow;
+    color: #333;
+    align-items: center;
+    justify-content: center;
+  }
+  .default {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .link {
+    font-weight: bold;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+</style>

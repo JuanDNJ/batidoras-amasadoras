@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import MarcasLayout from "@layouts/MarcasLayout.astro";
 import Tag from "@components/Tag/Tag.astro";
-import stylesMarcas from "./css/marcas.module.css";
 const collection = await getCollection("marcas");
 ---
 
@@ -38,7 +37,11 @@ const collection = await getCollection("marcas");
     </section>
   </section>
   <section class="grid">
-    {collection.map((record) => <Tag label={record.data.marca} />)}
+    {
+      collection.map((record) => (
+        <Tag slug={`${record.data.url}`} label={record.data.marca} />
+      ))
+    }
   </section>
   <style>
     .grid {

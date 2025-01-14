@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import Main from "@layouts/Main.astro";
+import Link from "@components/link/Link.astro";
+export async function getStaticPaths() {
+  const posts = (await getCollection("posts")) as [any];
+
+  return posts.map((props) => {
+    return {
+      params: { post: props.slug },
+      props: { props },
+    };
+  });
+}
+const { props } = Astro.props;
+const { title, description, author, date, marca, urlProduct, image } =
+  props.data;
+---
+
+<Main>
+  <Link to="/" title={title} className="link">
+    {title}
+  </Link>
+  <p>{description}</p>
+  <strong>{author}</strong>
+  <strong>{marca}</strong>
+  <strong>{date}</strong>
+  <strong>{urlProduct}</strong>
+  <strong>{props.slug}</strong>
+  <img src={image} alt={image} />
+</Main>
