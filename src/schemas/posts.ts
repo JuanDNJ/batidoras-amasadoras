@@ -4,7 +4,7 @@ export const posts = defineCollection({
   schema: z.object({
     title: z.string(),
     author: z.string(),
-    date: z.date(),
+    date: z.string(),
     marca: z.string(),
     description: z.string(),
     urlProduct: z.string(),
