@@ -1,10 +1,8 @@
 ---
 import GalleryAwa from "@components/GalleryAwa.astro";
-import LinkNoFollow from "@components/LinkNoFollow.astro";
 import Main from "@layouts/Main.astro";
-const blenders = await Astro.glob(
-  "../../../content/batidora-de-pedestal/**/*.md",
-);
+
+const blenders = await Astro.glob("../../content/batidora-de-pedestal/**/*.md");
 const filterPosts = blenders.filter((post) => !post.frontmatter.slug);
 ---
 
@@ -41,18 +39,13 @@ const filterPosts = blenders.filter((post) => !post.frontmatter.slug);
           2. Entiende las categorías de potencia:
         </h2>
         <section class="grid grid-rows justify-center gap-4">
-          <p class="text-xl md:text-sm p-2">
-            Las batidoras suelen clasificarse en categorías de potencia en
-            vatios (W).
-          </p>
           <div class="group cursor-pointer">
-            <button
-              aria-label={"Como elegir"}
-              class="bg-transparent hover:bg-stone-800 text-stone-800 hover:text-yellow-400 font-bold border-2 border-black px-2 py-[4px] rounded-md"
-              >Como elegir</button
-            >
+            <p class="text-xl md:text-sm p-2">
+              Las batidoras suelen clasificarse en categorías de potencia en
+              vatios (W).
+            </p>
             <ul
-              class="hidden px-4 py-2 group-active:w-full group-active:h-full group-active:flex group-active:flex-col group-active:absolute group-active:left-0 group-active:top-0 group-active:bg-white z-20 list-decimal select-none"
+              class="hidden group-hover:w-full group-hover:h-full group-hover:flex group-hover:flex-col gap-2 px-2 divide-y divide-slate-400 z-20"
             >
               <li class="flex flex-col">
                 <strong>Menos de 300W:</strong>
@@ -116,7 +109,9 @@ const filterPosts = blenders.filter((post) => !post.frontmatter.slug);
           </ul>
         </section>
       </article>
-      <article class="rounded-md shadow-md shadow-slate-300 p-4 flex flex-col">
+      <article
+        class="rounded-md shadow-md shadow-slate-300 p-4 flex flex-col z-10"
+      >
         <h2 class="text-2xl md:text-xl">5. Opiniones y reseñas:</h2>
         <section>
           <p class="text-xl md:text-sm p-2">

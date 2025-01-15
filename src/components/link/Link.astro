@@ -37,15 +37,13 @@ const { to, title, className, style, noFollow } = Astro.props;
     align-items: center;
     justify-content: center;
   }
-  .default {
-    &:hover {
-      text-decoration: underline;
-    }
+  .default:hover {
+    text-decoration: underline;
   }
   .link {
     font-weight: bold;
-    &:hover {
-      text-decoration: none;
-    }
+  }
+  .link:hover {
+    text-decoration: none;
   }
 </style>

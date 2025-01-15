@@ -27,13 +27,11 @@ const { title, description } = Astro.props;
     <Footer />
     <style is:global define:vars={{ scrollWidth }}>
       @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap");
-      :root {
-        ::-webkit-scrollbar {
-          width: var(--scrollWidth);
-        }
-        ::-webkit-scrollbar-thumb {
-          background: #dc2626;
-        }
+      ::-webkit-scrollbar {
+        width: var(--scrollWidth);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #dc2626;
       }
 
       .font-family-main-title {

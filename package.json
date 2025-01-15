@@ -21,6 +21,7 @@
     "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
-    "firebase-tools": "^13.0.3"
+    "firebase-tools": "^13.0.3",
+    "postcss-nesting": "^13.0.1"
   }
 }
