@@ -1,4 +1,4 @@
-# Astro Starter Kit: Blog
+# Batidoras Amasadoras
 
 ```sh
 npm create astro@latest -- --template blog
